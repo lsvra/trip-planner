@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927BD21DA6A80008BD1BD /* ColorConfig.swift */; };
+		95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927C121DA6C9B008BD1BD /* FontConfig.swift */; };
+		95C927C621DA7C9B008BD1BD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */; };
+		95C927C921DA7DBB008BD1BD /* PlannerViewControllerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927C821DA7DBB008BD1BD /* PlannerViewControllerTextField.swift */; };
 		95E5685F21D8EBF200317109 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5685E21D8EBF200317109 /* AppDelegate.swift */; };
 		95E5686121D8EBF200317109 /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5686021D8EBF200317109 /* PlannerViewController.swift */; };
 		95E5686421D8EBF200317109 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E5686221D8EBF200317109 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95C927BD21DA6A80008BD1BD /* ColorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfig.swift; sourceTree = "<group>"; };
+		95C927C121DA6C9B008BD1BD /* FontConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfig.swift; sourceTree = "<group>"; };
+		95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		95C927C821DA7DBB008BD1BD /* PlannerViewControllerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewControllerTextField.swift; sourceTree = "<group>"; };
 		95E5685B21D8EBF200317109 /* Trip Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E5685E21D8EBF200317109 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E5686021D8EBF200317109 /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95C927BC21DA6A63008BD1BD /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				95C927BD21DA6A80008BD1BD /* ColorConfig.swift */,
+				95C927C121DA6C9B008BD1BD /* FontConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		95C927C721DA7D61008BD1BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95E5686021D8EBF200317109 /* PlannerViewController.swift */,
+				95C927C821DA7DBB008BD1BD /* PlannerViewControllerTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95C927CA21DA7F34008BD1BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95E5687E21D8EED900317109 /* PlannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		95E5685221D8EBF200317109 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +135,7 @@
 				95E5685E21D8EBF200317109 /* AppDelegate.swift */,
 				95E5688221D8EF2800317109 /* UI */,
 				95E5688121D8EF0400317109 /* Resources */,
+				95C927BC21DA6A63008BD1BD /* Config */,
 				95E5688021D8EEEF00317109 /* Planner */,
 				95E5688521D8EFB500317109 /* Helpers */,
 			);
@@ -121,9 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				95E5688C21D8F6DA00317109 /* Configurator.swift */,
-				95E5686021D8EBF200317109 /* PlannerViewController.swift */,
-				95E5687E21D8EED900317109 /* PlannerViewModel.swift */,
-				95E5688E21D91E8500317109 /* Models */,
+				95C927C721DA7D61008BD1BD /* View */,
+				95C927CA21DA7F34008BD1BD /* ViewModel */,
+				95E5688E21D91E8500317109 /* Model */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -160,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				95E5688F21D91F3400317109 /* StringExtension.swift */,
+				95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,12 +210,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		95E5688E21D91E8500317109 /* Models */ = {
+		95E5688E21D91E8500317109 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				95E5688321D8EF9A00317109 /* Connections.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		95E5689621D9242400317109 /* Error Handling */ = {
@@ -298,9 +334,13 @@
 				95E5688B21D8F3AB00317109 /* DataLoader.swift in Sources */,
 				95E5687F21D8EEDA00317109 /* PlannerViewModel.swift in Sources */,
 				95E5689021D91F3400317109 /* StringExtension.swift in Sources */,
+				95C927C921DA7DBB008BD1BD /* PlannerViewControllerTextField.swift in Sources */,
 				95E5688D21D8F6DA00317109 /* Configurator.swift in Sources */,
 				95E5688421D8EF9A00317109 /* Connections.swift in Sources */,
 				95E5689821D9243600317109 /* Errors.swift in Sources */,
+				95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */,
+				95C927C621DA7C9B008BD1BD /* UIViewControllerExtension.swift in Sources */,
+				95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */,
 				95E5689A21D9861A00317109 /* Reachability.swift in Sources */,
 				95E5688921D8F1AD00317109 /* Endpoint.swift in Sources */,
 			);

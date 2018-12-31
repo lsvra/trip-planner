@@ -6,6 +6,13 @@
   Copyright © 2018 lsvra. All rights reserved.
 */
 
+//Buttons
+"button_go_to_map" = "Go to map";
+
+//Textfields
+"texfield_placeholder_from" = "From";
+"texfield_placeholder_to" = "To";
+
 //Errors - Title
 "error_title" = "Error";
 

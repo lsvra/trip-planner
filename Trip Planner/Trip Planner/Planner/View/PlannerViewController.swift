@@ -10,10 +10,21 @@ import UIKit
 
 class PlannerViewController: UIViewController {
     
+    //MARK: IBOutlets
+    @IBOutlet weak var fromTextField: UITextField!
+    @IBOutlet weak var toTextField: UITextField!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var goToMapButton: UIButton!
+    
     //MARK: Vars
     var viewModel: PlannerViewModel?
     
     //MARK: Lifecycle
+    override func loadView() {
+        super.loadView()
+        configureView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +32,7 @@ class PlannerViewController: UIViewController {
                                      queue: Configurator.queue(),
                                      reachability: Configurator.reachability())
         
+        hideKeyboardOnTap()
         bindOperations()
     }
     
@@ -33,6 +45,36 @@ class PlannerViewController: UIViewController {
     }
     
     //MARK: Methods
+    @IBAction func goToMapButtonTapped(_ sender: UIButton) {
+        //TODO: Open map
+    }
+    
+    private func configureView(){
+        goToMapButton.backgroundColor = Color.mainColorDark.color()
+        goToMapButton.setTitleColor(Color.white.color() , for: .normal)
+        goToMapButton.setTitleColor(Color.secondaryColor.color(), for: .disabled)
+        goToMapButton.isEnabled = false
+        
+        goToMapButton.setTitle("button_go_to_map".localized(), for: .normal)
+        goToMapButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
+        
+        costLabel.font = UIFont(name: Font.bold.name(), size: 34)
+        costLabel.textColor = Color.mainColorDark.color()
+        costLabel.text = "0"
+        
+        fromTextField.font = UIFont(name: Font.regular.name(), size: 16)
+        fromTextField.placeholder = "texfield_placeholder_from".localized()
+        fromTextField.clearButtonMode = .whileEditing
+        fromTextField.returnKeyType = .done
+        fromTextField.delegate = self
+        
+        toTextField.font = UIFont(name: Font.regular.name(), size: 16)
+        toTextField.placeholder = "texfield_placeholder_to".localized()
+        toTextField.clearButtonMode = .whileEditing
+        toTextField.returnKeyType = .done
+        toTextField.delegate = self
+    }
+    
     private func bindOperations(){
         
         guard let viewModel = viewModel else {
@@ -44,7 +86,6 @@ class PlannerViewController: UIViewController {
         
         viewModel.reload = { connections in
             //TODO: Reload Connections
-            print(connections)
         }
         
         viewModel.displayError = { [weak self] error in
