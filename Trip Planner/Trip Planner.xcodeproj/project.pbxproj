@@ -21,8 +21,8 @@
 		95E5689221D91F9500317109 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E5689121D91F9500317109 /* Localizable.strings */; };
 		95E5689821D9243600317109 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689721D9243600317109 /* Errors.swift */; };
 		95E5689A21D9861A00317109 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689921D9861A00317109 /* Reachability.swift */; };
-		95E5689E21D99F0900317109 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689D21D99F0900317109 /* NetworkingTests.swift */; };
 		95E568A021D9A1B400317109 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689F21D9A1B400317109 /* EndpointTests.swift */; };
+		95E568A221D9A93A00317109 /* DataLoadOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		95E5689121D91F9500317109 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		95E5689721D9243600317109 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		95E5689921D9861A00317109 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		95E5689D21D99F0900317109 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		95E5689F21D9A1B400317109 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadOperationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				95E5687521D8EBF300317109 /* Info.plist */,
-				95E5689D21D99F0900317109 /* NetworkingTests.swift */,
 				95E5689F21D9A1B400317109 /* EndpointTests.swift */,
+				95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */,
 			);
 			path = "Trip PlannerTests";
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E568A021D9A1B400317109 /* EndpointTests.swift in Sources */,
-				95E5689E21D99F0900317109 /* NetworkingTests.swift in Sources */,
+				95E568A221D9A93A00317109 /* DataLoadOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
