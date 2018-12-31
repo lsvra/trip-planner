@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Trip Planner
+
+  Created by Luís Vieira on 30/12/2018.
+  Copyright © 2018 lsvra. All rights reserved.
+*/
+
+//Errors - Title
+"error_title" = "Error";
+
+//Errors - Message
+"error_message_network" = "An error has ocurred while contacting the server. Please try again later.";
+"error_message_no_internet_connection" = "Please check your connection and try again.";
+"error_message_parsing_data" = "An error has ocurred while parsing the response from the server. Please try again later.";
+"error_message_unknown" = "An error has ocurred. Please try again.";
+
+//Errors - Action
+"error_action_ok" = "Ok";
