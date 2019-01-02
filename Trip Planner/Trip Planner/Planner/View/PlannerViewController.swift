@@ -18,6 +18,7 @@ class PlannerViewController: UIViewController {
     
     //MARK: Vars
     var viewModel: PlannerViewModel?
+    var availableCities: Set<String>?
     
     //MARK: Lifecycle
     override func loadView() {
@@ -64,12 +65,14 @@ class PlannerViewController: UIViewController {
         
         fromTextField.font = UIFont(name: Font.regular.name(), size: 16)
         fromTextField.placeholder = "texfield_placeholder_from".localized()
+        fromTextField.textColor = Color.textColorDark.color()
         fromTextField.clearButtonMode = .whileEditing
         fromTextField.returnKeyType = .done
         fromTextField.delegate = self
         
         toTextField.font = UIFont(name: Font.regular.name(), size: 16)
         toTextField.placeholder = "texfield_placeholder_to".localized()
+        toTextField.textColor = Color.textColorDark.color()
         toTextField.clearButtonMode = .whileEditing
         toTextField.returnKeyType = .done
         toTextField.delegate = self
@@ -84,8 +87,8 @@ class PlannerViewController: UIViewController {
             return
         }
         
-        viewModel.reload = { connections in
-            //TODO: Reload Connections
+        viewModel.reload = { cities in
+            self.availableCities = cities
         }
         
         viewModel.displayError = { [weak self] error in

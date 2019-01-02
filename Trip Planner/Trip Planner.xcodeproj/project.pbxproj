@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */; };
+		95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B521DC158C009FCB77 /* SetExtension.swift */; };
 		95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927BD21DA6A80008BD1BD /* ColorConfig.swift */; };
 		95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927C121DA6C9B008BD1BD /* FontConfig.swift */; };
 		95C927C621DA7C9B008BD1BD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		95BBD5B521DC158C009FCB77 /* SetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
 		95C927BD21DA6A80008BD1BD /* ColorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfig.swift; sourceTree = "<group>"; };
 		95C927C121DA6C9B008BD1BD /* FontConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfig.swift; sourceTree = "<group>"; };
 		95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			children = (
 				95E5688F21D91F3400317109 /* StringExtension.swift */,
 				95C927C521DA7C9B008BD1BD /* UIViewControllerExtension.swift */,
+				95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */,
+				95BBD5B521DC158C009FCB77 /* SetExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,8 +343,10 @@
 				95C927C921DA7DBB008BD1BD /* PlannerViewControllerTextField.swift in Sources */,
 				95E5688D21D8F6DA00317109 /* Configurator.swift in Sources */,
 				95E5688421D8EF9A00317109 /* Connections.swift in Sources */,
+				95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */,
 				95E5689821D9243600317109 /* Errors.swift in Sources */,
 				95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */,
+				95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */,
 				95C927C621DA7C9B008BD1BD /* UIViewControllerExtension.swift in Sources */,
 				95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */,
 				95E5689A21D9861A00317109 /* Reachability.swift in Sources */,

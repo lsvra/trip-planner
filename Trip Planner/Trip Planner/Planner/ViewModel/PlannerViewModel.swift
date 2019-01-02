@@ -18,7 +18,13 @@ final class PlannerViewModel {
     //MARK: MVVM Vars
     private var connections: Connections? {
         didSet {
-            self.reload?(connections)
+            guard let connections = connections?.connections else {
+                return
+            }
+            
+            let cities = extractCities(from: connections)
+            
+            self.reload?(cities)
         }
     }
     
@@ -31,7 +37,7 @@ final class PlannerViewModel {
     }
     
     //MARK: MVVM Closures
-    var reload: ((Connections?) -> Void)?
+    var reload: ((Set<String>) -> Void)?
     var displayError: ((ConnectionsError) -> Void)?
 
     //MARK: Lifecycle
@@ -91,5 +97,17 @@ final class PlannerViewModel {
         
         //Add the operation to the queue
         queue.addOperation(dataLoader)
+    }
+    
+    private func extractCities(from connections: [Connection]) -> Set<String> {
+        
+        var set = Set<String>()
+        
+        connections.forEach({
+            set.insert($0.from)
+            set.insert($0.to)
+        })
+        
+        return set
     }
 }
