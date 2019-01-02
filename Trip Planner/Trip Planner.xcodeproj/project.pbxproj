@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A5744921DD0299000C2E2F /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5744821DD0299000C2E2F /* SetTests.swift */; };
 		95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */; };
 		95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B521DC158C009FCB77 /* SetExtension.swift */; };
 		95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C927BD21DA6A80008BD1BD /* ColorConfig.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95A5744821DD0299000C2E2F /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		95BBD5B521DC158C009FCB77 /* SetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
 		95C927BD21DA6A80008BD1BD /* ColorConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfig.swift; sourceTree = "<group>"; };
@@ -88,6 +90,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		955E1D3A21DD136A00B3BDC5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				955E1D3C21DD138900B3BDC5 /* Networking */,
+				955E1D3B21DD138000B3BDC5 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		955E1D3B21DD138000B3BDC5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95A5744821DD0299000C2E2F /* SetTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		955E1D3C21DD138900B3BDC5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				95E5689F21D9A1B400317109 /* EndpointTests.swift */,
+				95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		955E1D3D21DD13CE00B3BDC5 /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
 		95C927BC21DA6A63008BD1BD /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +184,9 @@
 		95E5687221D8EBF300317109 /* Trip PlannerTests */ = {
 			isa = PBXGroup;
 			children = (
+				955E1D3D21DD13CE00B3BDC5 /* Planner */,
 				95E5687521D8EBF300317109 /* Info.plist */,
-				95E5689F21D9A1B400317109 /* EndpointTests.swift */,
-				95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */,
+				955E1D3A21DD136A00B3BDC5 /* Helpers */,
 			);
 			path = "Trip PlannerTests";
 			sourceTree = "<group>";
@@ -359,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E568A021D9A1B400317109 /* EndpointTests.swift in Sources */,
+				95A5744921DD0299000C2E2F /* SetTests.swift in Sources */,
 				95E568A221D9A93A00317109 /* DataLoadOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
