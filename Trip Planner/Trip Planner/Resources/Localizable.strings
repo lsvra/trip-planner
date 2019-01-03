@@ -6,8 +6,10 @@
   Copyright © 2018 lsvra. All rights reserved.
 */
 
+
 //Buttons
 "button_go_to_map" = "Go to map";
+"button_plan_trip" = "Plan trip";
 
 //Textfields
 "texfield_placeholder_from" = "From";
@@ -20,6 +22,7 @@
 "error_message_network" = "An error has ocurred while contacting the server. Please try again later.";
 "error_message_no_internet_connection" = "Please check your connection and try again.";
 "error_message_parsing_data" = "An error has ocurred while parsing the response from the server. Please try again later.";
+"error_message_trip_unavailable" = "The trip you selected can not be made right now. Please try a different combination.";
 "error_message_unknown" = "An error has ocurred. Please try again.";
 
 //Errors - Action

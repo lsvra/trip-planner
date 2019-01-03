@@ -10,6 +10,9 @@ import Foundation
 
 final class PlannerViewModel {
     
+    //MARK: Vars
+    private var graph: Graph?
+    
     //MARK: DI Vars
     private let session: URLSession
     private let queue: OperationQueue
@@ -28,7 +31,15 @@ final class PlannerViewModel {
         }
     }
     
-    private var error: ConnectionsError? {
+    private var cost: String? {
+        didSet {
+            if let cost = cost {
+                self.displayCost?(cost)
+            }
+        }
+    }
+    
+    private var error: PlannerError? {
         didSet {
             if let error = error {
                 self.displayError?(error)
@@ -36,9 +47,19 @@ final class PlannerViewModel {
         }
     }
     
+    private var validTrip: Bool? {
+        didSet {
+            if let validTrip = validTrip {
+                self.toggleMapButton?(validTrip)
+            }
+        }
+    }
+    
     //MARK: MVVM Closures
     var reload: ((Set<String>) -> Void)?
-    var displayError: ((ConnectionsError) -> Void)?
+    var displayError: ((PlannerError) -> Void)?
+    var displayCost: ((String) -> Void)?
+    var toggleMapButton: ((Bool) -> Void)?
 
     //MARK: Lifecycle
     init(session: URLSession, queue: OperationQueue, reachability: Reachability?) {
@@ -46,6 +67,7 @@ final class PlannerViewModel {
         self.session = session
         self.queue = queue
         self.reachability = reachability
+        self.graph = nil
     }
 
     //MARK: Methods
@@ -92,11 +114,30 @@ final class PlannerViewModel {
                 return
             }
             
+            self.graph = Graph(data: result)
             self.connections = result
         }
         
         //Add the operation to the queue
         queue.addOperation(dataLoader)
+    }
+    
+    func requestPathAndCost(from start: String, to end: String){
+       
+        guard let graph = graph else {
+            return
+        }
+        
+        guard let path = graph.getCheapestPath(from: start, to: end) else {
+            
+            self.error = .tripUnavailable
+            self.cost = "-"
+            self.validTrip = false
+            return
+        }
+        
+        self.cost = String(describing: path.cost)
+        self.validTrip = true
     }
     
     private func extractCities(from connections: [Connection]) -> Set<String> {

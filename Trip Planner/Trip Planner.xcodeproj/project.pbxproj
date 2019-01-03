@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		955E1D4321DD1A0A00B3BDC5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4221DD1A0A00B3BDC5 /* Graph.swift */; };
+		955E1D4521DD218100B3BDC5 /* GraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4421DD218100B3BDC5 /* GraphNode.swift */; };
+		955E1D4721DD7A2F00B3BDC5 /* GraphPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */; };
+		955E1D4921DD933300B3BDC5 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4821DD933300B3BDC5 /* GraphEdge.swift */; };
+		955E1D4B21DD93AC00B3BDC5 /* GraphContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */; };
+		955E1D4D21DD94AA00B3BDC5 /* ConnectionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */; };
 		95A5744921DD0299000C2E2F /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5744821DD0299000C2E2F /* SetTests.swift */; };
 		95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */; };
 		95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B521DC158C009FCB77 /* SetExtension.swift */; };
@@ -43,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		955E1D4221DD1A0A00B3BDC5 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		955E1D4421DD218100B3BDC5 /* GraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNode.swift; sourceTree = "<group>"; };
+		955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPath.swift; sourceTree = "<group>"; };
+		955E1D4821DD933300B3BDC5 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
+		955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContract.swift; sourceTree = "<group>"; };
+		955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsExtension.swift; sourceTree = "<group>"; };
 		95A5744821DD0299000C2E2F /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		95BBD5B521DC158C009FCB77 /* SetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExtension.swift; sourceTree = "<group>"; };
@@ -121,6 +133,18 @@
 			children = (
 			);
 			path = Planner;
+			sourceTree = "<group>";
+		};
+		955E1D4121DD19D800B3BDC5 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */,
+				955E1D4221DD1A0A00B3BDC5 /* Graph.swift */,
+				955E1D4421DD218100B3BDC5 /* GraphNode.swift */,
+				955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */,
+				955E1D4821DD933300B3BDC5 /* GraphEdge.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		95C927BC21DA6A63008BD1BD /* Config */ = {
@@ -223,6 +247,7 @@
 		95E5688521D8EFB500317109 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				955E1D4121DD19D800B3BDC5 /* Graph */,
 				95E5689621D9242400317109 /* Error Handling */,
 				95E5688721D8EFE300317109 /* Networking */,
 				95E5688621D8EFDD00317109 /* Extensions */,
@@ -255,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				95E5688321D8EF9A00317109 /* Connections.swift */,
+				955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,16 +400,22 @@
 				95E5685F21D8EBF200317109 /* AppDelegate.swift in Sources */,
 				95E5688B21D8F3AB00317109 /* DataLoader.swift in Sources */,
 				95E5687F21D8EEDA00317109 /* PlannerViewModel.swift in Sources */,
+				955E1D4521DD218100B3BDC5 /* GraphNode.swift in Sources */,
 				95E5689021D91F3400317109 /* StringExtension.swift in Sources */,
+				955E1D4B21DD93AC00B3BDC5 /* GraphContract.swift in Sources */,
 				95C927C921DA7DBB008BD1BD /* PlannerViewControllerTextField.swift in Sources */,
 				95E5688D21D8F6DA00317109 /* Configurator.swift in Sources */,
 				95E5688421D8EF9A00317109 /* Connections.swift in Sources */,
 				95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */,
+				955E1D4321DD1A0A00B3BDC5 /* Graph.swift in Sources */,
 				95E5689821D9243600317109 /* Errors.swift in Sources */,
+				955E1D4721DD7A2F00B3BDC5 /* GraphPath.swift in Sources */,
 				95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */,
 				95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */,
 				95C927C621DA7C9B008BD1BD /* UIViewControllerExtension.swift in Sources */,
+				955E1D4D21DD94AA00B3BDC5 /* ConnectionsExtension.swift in Sources */,
 				95C927BE21DA6A80008BD1BD /* ColorConfig.swift in Sources */,
+				955E1D4921DD933300B3BDC5 /* GraphEdge.swift in Sources */,
 				95E5689A21D9861A00317109 /* Reachability.swift in Sources */,
 				95E5688921D8F1AD00317109 /* Endpoint.swift in Sources */,
 			);

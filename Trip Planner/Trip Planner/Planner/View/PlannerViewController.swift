@@ -14,6 +14,7 @@ class PlannerViewController: UIViewController {
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var planTripButton: UIButton!
     @IBOutlet weak var goToMapButton: UIButton!
     
     //MARK: Vars
@@ -46,22 +47,32 @@ class PlannerViewController: UIViewController {
     }
     
     //MARK: Methods
+    
+    @IBAction func planTripButtonTapped(_ sender: UIButton) {
+        planTrip()
+    }
+    
     @IBAction func goToMapButtonTapped(_ sender: UIButton) {
         //TODO: Open map
     }
     
     private func configureView(){
-        goToMapButton.backgroundColor = Color.mainColorDark.color()
+        
+        goToMapButton.setTitle("button_go_to_map".localized(), for: .normal)
+        goToMapButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
+        goToMapButton.backgroundColor = Color.textColorRed.color()
         goToMapButton.setTitleColor(Color.white.color() , for: .normal)
         goToMapButton.setTitleColor(Color.secondaryColor.color(), for: .disabled)
         goToMapButton.isEnabled = false
         
-        goToMapButton.setTitle("button_go_to_map".localized(), for: .normal)
-        goToMapButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
+        planTripButton.setTitle("button_plan_trip".localized(), for: .normal)
+        planTripButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
+        planTripButton.backgroundColor = Color.mainColorDark.color()
+        planTripButton.setTitleColor(Color.white.color() , for: .normal)
         
         costLabel.font = UIFont(name: Font.bold.name(), size: 34)
         costLabel.textColor = Color.mainColorDark.color()
-        costLabel.text = "0"
+        costLabel.text = "-"
         
         fromTextField.font = UIFont(name: Font.regular.name(), size: 16)
         fromTextField.placeholder = "texfield_placeholder_from".localized()
@@ -82,7 +93,7 @@ class PlannerViewController: UIViewController {
         
         guard let viewModel = viewModel else {
             
-            let error = ConnectionsError.unknownError
+            let error = PlannerError.unknownError
             displayError(title: error.title().localized(), message: error.message().localized())
             return
         }
@@ -99,6 +110,40 @@ class PlannerViewController: UIViewController {
             
             self.displayError(title: error.title().localized(), message: error.message().localized())
         }
+        
+        viewModel.displayCost = { [weak self] cost in
+            
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.costLabel.text = cost
+            }
+        }
+        
+        viewModel.toggleMapButton = { [weak self] isEnabled in
+            
+            guard let self = self else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.goToMapButton.isEnabled = isEnabled
+                self.goToMapButton.backgroundColor = isEnabled ? Color.mainColorDark.color() : Color.textColorRed.color()
+            }
+        }
+    }
+    
+    private func planTrip(){
+        
+        guard let start = fromTextField.text, let end = toTextField.text else {
+            return
+        }
+        
+        if let viewModel = viewModel {
+            viewModel.requestPathAndCost(from: start, to: end)
+        }
     }
     
     private func displayError(title: String, message: String ) {
@@ -113,4 +158,3 @@ class PlannerViewController: UIViewController {
         }
     }
 }
-

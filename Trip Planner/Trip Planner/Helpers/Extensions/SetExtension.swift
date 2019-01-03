@@ -6,10 +6,9 @@
 //  Copyright © 2019 lsvra. All rights reserved.
 //
 
-import Foundation
-
 extension Set where Element == String {
     
+    //Searches the array for a string that matches the given text
     func getMatch(for text: String) -> String? {
         
         let matches = self.filter({

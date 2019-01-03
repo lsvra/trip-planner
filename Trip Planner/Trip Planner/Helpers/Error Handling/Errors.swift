@@ -6,12 +6,11 @@
 //  Copyright © 2018 lsvra. All rights reserved.
 //
 
-import Foundation
-
-enum ConnectionsError: Error {
+enum PlannerError: Error {
     case networkError
     case noInternetConnection
     case parsingError
+    case tripUnavailable
     case unknownError
     
     func title() -> String {
@@ -26,6 +25,8 @@ enum ConnectionsError: Error {
             return "error_message_no_internet_connection"
         case .parsingError:
             return "error_message_parsing_data"
+        case .tripUnavailable:
+            return "error_message_trip_unavailable"
         case .unknownError:
             return "error_message_unknown"
         }
