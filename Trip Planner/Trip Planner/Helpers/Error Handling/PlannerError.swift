@@ -1,9 +1,9 @@
 //
-//  Errors.swift
+//  PlannerError.swift
 //  Trip Planner
 //
-//  Created by Luís Vieira on 30/12/2018.
-//  Copyright © 2018 lsvra. All rights reserved.
+//  Created by Luís Vieira on 03/01/2019.
+//  Copyright © 2019 lsvra. All rights reserved.
 //
 
 enum PlannerError: Error {

@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9545F4E621DE4F65003A5056 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4E521DE4F65003A5056 /* MapViewController.swift */; };
+		9545F4E821DE4F71003A5056 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4E721DE4F71003A5056 /* MapViewModel.swift */; };
+		9545F4EF21DE607B003A5056 /* MapViewControllerMKMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4EE21DE607B003A5056 /* MapViewControllerMKMap.swift */; };
+		9545F4F121DE6639003A5056 /* CoordinatesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4F021DE6639003A5056 /* CoordinatesExtension.swift */; };
+		9545F4F421DE6CCC003A5056 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4F321DE6CCC003A5056 /* MapAnnotation.swift */; };
+		9545F4F721DE891B003A5056 /* MappableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4F621DE891B003A5056 /* MappableProtocol.swift */; };
+		9545F4FA21DE93E8003A5056 /* PlannerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4F921DE93E8003A5056 /* PlannerError.swift */; };
+		9545F4FC21DE9404003A5056 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4FB21DE9404003A5056 /* MapError.swift */; };
 		955E1D4321DD1A0A00B3BDC5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4221DD1A0A00B3BDC5 /* Graph.swift */; };
 		955E1D4521DD218100B3BDC5 /* GraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4421DD218100B3BDC5 /* GraphNode.swift */; };
 		955E1D4721DD7A2F00B3BDC5 /* GraphPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */; };
 		955E1D4921DD933300B3BDC5 /* GraphEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4821DD933300B3BDC5 /* GraphEdge.swift */; };
-		955E1D4B21DD93AC00B3BDC5 /* GraphContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */; };
+		955E1D4B21DD93AC00B3BDC5 /* GraphProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4A21DD93AC00B3BDC5 /* GraphProtocol.swift */; };
 		955E1D4D21DD94AA00B3BDC5 /* ConnectionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */; };
 		95A5744921DD0299000C2E2F /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5744821DD0299000C2E2F /* SetTests.swift */; };
 		95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */; };
@@ -32,7 +40,6 @@
 		95E5688D21D8F6DA00317109 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5688C21D8F6DA00317109 /* Configurator.swift */; };
 		95E5689021D91F3400317109 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5688F21D91F3400317109 /* StringExtension.swift */; };
 		95E5689221D91F9500317109 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E5689121D91F9500317109 /* Localizable.strings */; };
-		95E5689821D9243600317109 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689721D9243600317109 /* Errors.swift */; };
 		95E5689A21D9861A00317109 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689921D9861A00317109 /* Reachability.swift */; };
 		95E568A021D9A1B400317109 /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E5689F21D9A1B400317109 /* EndpointTests.swift */; };
 		95E568A221D9A93A00317109 /* DataLoadOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */; };
@@ -49,11 +56,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9545F4E521DE4F65003A5056 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9545F4E721DE4F71003A5056 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		9545F4EE21DE607B003A5056 /* MapViewControllerMKMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerMKMap.swift; sourceTree = "<group>"; };
+		9545F4F021DE6639003A5056 /* CoordinatesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesExtension.swift; sourceTree = "<group>"; };
+		9545F4F321DE6CCC003A5056 /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		9545F4F621DE891B003A5056 /* MappableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableProtocol.swift; sourceTree = "<group>"; };
+		9545F4F921DE93E8003A5056 /* PlannerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerError.swift; sourceTree = "<group>"; };
+		9545F4FB21DE9404003A5056 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
 		955E1D4221DD1A0A00B3BDC5 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		955E1D4421DD218100B3BDC5 /* GraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNode.swift; sourceTree = "<group>"; };
 		955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPath.swift; sourceTree = "<group>"; };
 		955E1D4821DD933300B3BDC5 /* GraphEdge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEdge.swift; sourceTree = "<group>"; };
-		955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphContract.swift; sourceTree = "<group>"; };
+		955E1D4A21DD93AC00B3BDC5 /* GraphProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphProtocol.swift; sourceTree = "<group>"; };
 		955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsExtension.swift; sourceTree = "<group>"; };
 		95A5744821DD0299000C2E2F /* SetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		95BBD5B321DC04CD009FCB77 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
@@ -78,7 +93,6 @@
 		95E5688C21D8F6DA00317109 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 		95E5688F21D91F3400317109 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		95E5689121D91F9500317109 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		95E5689721D9243600317109 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		95E5689921D9861A00317109 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		95E5689F21D9A1B400317109 /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
 		95E568A121D9A93A00317109 /* DataLoadOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLoadOperationTests.swift; sourceTree = "<group>"; };
@@ -102,6 +116,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9545F4E321DE4F32003A5056 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				95E5688021D8EEEF00317109 /* Planner */,
+				9545F4E421DE4F54003A5056 /* Map */,
+				9545F4EB21DE5EBF003A5056 /* Model */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9545F4E421DE4F54003A5056 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9545F4F821DE89E2003A5056 /* Protocols */,
+				9545F4EC21DE603A003A5056 /* View */,
+				9545F4ED21DE6045003A5056 /* ViewModel */,
+				9545F4F221DE6CB0003A5056 /* Model */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9545F4EB21DE5EBF003A5056 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95E5688321D8EF9A00317109 /* Connections.swift */,
+				955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */,
+				9545F4F021DE6639003A5056 /* CoordinatesExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9545F4EC21DE603A003A5056 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9545F4E521DE4F65003A5056 /* MapViewController.swift */,
+				9545F4EE21DE607B003A5056 /* MapViewControllerMKMap.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9545F4ED21DE6045003A5056 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9545F4E721DE4F71003A5056 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9545F4F221DE6CB0003A5056 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9545F4F321DE6CCC003A5056 /* MapAnnotation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9545F4F521DE716D003A5056 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */,
+				955E1D4821DD933300B3BDC5 /* GraphEdge.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9545F4F821DE89E2003A5056 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9545F4F621DE891B003A5056 /* MappableProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		955E1D3A21DD136A00B3BDC5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,11 +225,10 @@
 		955E1D4121DD19D800B3BDC5 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				955E1D4A21DD93AC00B3BDC5 /* GraphContract.swift */,
+				955E1D4A21DD93AC00B3BDC5 /* GraphProtocol.swift */,
 				955E1D4221DD1A0A00B3BDC5 /* Graph.swift */,
 				955E1D4421DD218100B3BDC5 /* GraphNode.swift */,
-				955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */,
-				955E1D4821DD933300B3BDC5 /* GraphEdge.swift */,
+				9545F4F521DE716D003A5056 /* Model */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -199,7 +285,7 @@
 				95E5688221D8EF2800317109 /* UI */,
 				95E5688121D8EF0400317109 /* Resources */,
 				95C927BC21DA6A63008BD1BD /* Config */,
-				95E5688021D8EEEF00317109 /* Planner */,
+				9545F4E321DE4F32003A5056 /* Features */,
 				95E5688521D8EFB500317109 /* Helpers */,
 			);
 			path = "Trip Planner";
@@ -221,7 +307,6 @@
 				95E5688C21D8F6DA00317109 /* Configurator.swift */,
 				95C927C721DA7D61008BD1BD /* View */,
 				95C927CA21DA7F34008BD1BD /* ViewModel */,
-				95E5688E21D91E8500317109 /* Model */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -276,19 +361,11 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		95E5688E21D91E8500317109 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				95E5688321D8EF9A00317109 /* Connections.swift */,
-				955E1D4C21DD94AA00B3BDC5 /* ConnectionsExtension.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		95E5689621D9242400317109 /* Error Handling */ = {
 			isa = PBXGroup;
 			children = (
-				95E5689721D9243600317109 /* Errors.swift */,
+				9545F4F921DE93E8003A5056 /* PlannerError.swift */,
+				9545F4FB21DE9404003A5056 /* MapError.swift */,
 			);
 			path = "Error Handling";
 			sourceTree = "<group>";
@@ -398,17 +475,23 @@
 			files = (
 				95E5686121D8EBF200317109 /* PlannerViewController.swift in Sources */,
 				95E5685F21D8EBF200317109 /* AppDelegate.swift in Sources */,
+				9545F4F421DE6CCC003A5056 /* MapAnnotation.swift in Sources */,
 				95E5688B21D8F3AB00317109 /* DataLoader.swift in Sources */,
+				9545F4EF21DE607B003A5056 /* MapViewControllerMKMap.swift in Sources */,
+				9545F4FC21DE9404003A5056 /* MapError.swift in Sources */,
 				95E5687F21D8EEDA00317109 /* PlannerViewModel.swift in Sources */,
 				955E1D4521DD218100B3BDC5 /* GraphNode.swift in Sources */,
 				95E5689021D91F3400317109 /* StringExtension.swift in Sources */,
-				955E1D4B21DD93AC00B3BDC5 /* GraphContract.swift in Sources */,
+				9545F4F121DE6639003A5056 /* CoordinatesExtension.swift in Sources */,
+				955E1D4B21DD93AC00B3BDC5 /* GraphProtocol.swift in Sources */,
 				95C927C921DA7DBB008BD1BD /* PlannerViewControllerTextField.swift in Sources */,
 				95E5688D21D8F6DA00317109 /* Configurator.swift in Sources */,
+				9545F4E621DE4F65003A5056 /* MapViewController.swift in Sources */,
+				9545F4F721DE891B003A5056 /* MappableProtocol.swift in Sources */,
 				95E5688421D8EF9A00317109 /* Connections.swift in Sources */,
 				95BBD5B621DC158C009FCB77 /* SetExtension.swift in Sources */,
 				955E1D4321DD1A0A00B3BDC5 /* Graph.swift in Sources */,
-				95E5689821D9243600317109 /* Errors.swift in Sources */,
+				9545F4FA21DE93E8003A5056 /* PlannerError.swift in Sources */,
 				955E1D4721DD7A2F00B3BDC5 /* GraphPath.swift in Sources */,
 				95C927C221DA6C9B008BD1BD /* FontConfig.swift in Sources */,
 				95BBD5B421DC04CD009FCB77 /* UITextFieldExtension.swift in Sources */,
@@ -418,6 +501,7 @@
 				955E1D4921DD933300B3BDC5 /* GraphEdge.swift in Sources */,
 				95E5689A21D9861A00317109 /* Reachability.swift in Sources */,
 				95E5688921D8F1AD00317109 /* Endpoint.swift in Sources */,
+				9545F4E821DE4F71003A5056 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

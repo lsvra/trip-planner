@@ -12,6 +12,7 @@ final class PlannerViewModel {
     
     //MARK: Vars
     private var graph: Graph?
+    var coordinates: [Mappable]?
     
     //MARK: DI Vars
     private let session: URLSession
@@ -138,6 +139,33 @@ final class PlannerViewModel {
         
         self.cost = String(describing: path.cost)
         self.validTrip = true
+        
+        if let connections = self.connections?.connections {
+            self.coordinates = extractTripCoordinates(from: connections, using: path.path)
+        }
+    }
+    
+    private func extractTripCoordinates(from connections: [Connection], using cities: [String]) -> [Coordinate]?{
+        
+        var coordinates = [Coordinate]()
+        
+        guard cities.count > 1 else {
+            return nil
+        }
+        
+        for i in 0..<cities.count - 1 {
+            
+            let connection = connections.first(where: {
+                $0.from == cities[i] && $0.to == cities[i + 1]
+            })
+            
+            if let connection = connection {
+                coordinates.append(connection.coordinates.from)
+                coordinates.append(connection.coordinates.to)
+            }
+        }
+        
+        return coordinates
     }
     
     private func extractCities(from connections: [Connection]) -> Set<String> {

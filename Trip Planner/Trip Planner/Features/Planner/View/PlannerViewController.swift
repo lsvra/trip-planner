@@ -18,7 +18,7 @@ class PlannerViewController: UIViewController {
     @IBOutlet weak var goToMapButton: UIButton!
     
     //MARK: Vars
-    var viewModel: PlannerViewModel?
+    private var viewModel: PlannerViewModel?
     var availableCities: Set<String>?
     
     //MARK: Lifecycle
@@ -47,17 +47,18 @@ class PlannerViewController: UIViewController {
     }
     
     //MARK: Methods
-    
     @IBAction func planTripButtonTapped(_ sender: UIButton) {
         planTrip()
     }
     
     @IBAction func goToMapButtonTapped(_ sender: UIButton) {
-        //TODO: Open map
+        openMap()
     }
     
     private func configureView(){
         
+        title = "title_planner".localized()
+      
         goToMapButton.setTitle("button_go_to_map".localized(), for: .normal)
         goToMapButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
         goToMapButton.backgroundColor = Color.textColorRed.color()
@@ -138,6 +139,8 @@ class PlannerViewController: UIViewController {
     private func planTrip(){
         
         guard let start = fromTextField.text, let end = toTextField.text else {
+            let error = PlannerError.unknownError
+            displayError(title: error.title().localized(), message: error.message().localized())
             return
         }
         
@@ -146,15 +149,26 @@ class PlannerViewController: UIViewController {
         }
     }
     
-    private func displayError(title: String, message: String ) {
+    private func openMap(){
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "error_action_ok".localized(),
-                                      style: .default,
-                                      handler: nil))
-        
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
+        guard let navigationController = navigationController else {
+            let error = PlannerError.unknownError
+            displayError(title: error.title().localized(), message: error.message().localized())
+            return
         }
+        
+        guard let coordinates = viewModel?.coordinates else {
+            let error = PlannerError.unknownError
+            displayError(title: error.title().localized(), message: error.message().localized())
+            return
+        }
+        
+        guard let viewController = MapViewController.instantiate(with: coordinates) else {
+            let error = PlannerError.unknownError
+            displayError(title: error.title().localized(), message: error.message().localized())
+            return
+        }
+        
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

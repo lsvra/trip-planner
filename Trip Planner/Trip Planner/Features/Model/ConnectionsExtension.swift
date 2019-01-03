@@ -6,7 +6,7 @@
 //  Copyright © 2019 lsvra. All rights reserved.
 //
 
-import Foundation
+//Implementation of the Graphable protocol
 
 extension Connections: Graphable {
     

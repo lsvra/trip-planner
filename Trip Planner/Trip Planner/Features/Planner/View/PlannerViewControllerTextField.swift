@@ -6,7 +6,6 @@
 //  Copyright © 2018 lsvra. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 //MARK: UITextFieldDelegate
@@ -28,6 +27,7 @@ extension PlannerViewController: UITextFieldDelegate {
             return
         }
         
+        //Set the text to red if there is no match available
         guard cities.getMatch(for: currentText) != nil else {
             DispatchQueue.main.async {
                 textField.textColor = Color.textColorRed.color()

@@ -6,6 +6,10 @@
   Copyright © 2018 lsvra. All rights reserved.
 */
 
+//General
+"app_name" = "Trip Planner";
+"title_planner" = "Planner";
+"title_map" = "Your Trip";
 
 //Buttons
 "button_go_to_map" = "Go to map";
@@ -24,6 +28,7 @@
 "error_message_parsing_data" = "An error has ocurred while parsing the response from the server. Please try again later.";
 "error_message_trip_unavailable" = "The trip you selected can not be made right now. Please try a different combination.";
 "error_message_unknown" = "An error has ocurred. Please try again.";
+"error_message_drawing" = "An error has ocurred while drawing on your map. Please come back again later.";
 
 //Errors - Action
 "error_action_ok" = "Ok";

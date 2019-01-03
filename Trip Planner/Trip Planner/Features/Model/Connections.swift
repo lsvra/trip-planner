@@ -6,6 +6,8 @@
 //  Copyright © 2018 lsvra. All rights reserved.
 //
 
+// Model file accessible by all the Features in the app
+
 struct Connections: Decodable {
     let connections: [Connection]
 }
