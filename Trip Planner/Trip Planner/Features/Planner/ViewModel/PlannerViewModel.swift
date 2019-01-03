@@ -115,7 +115,10 @@ final class PlannerViewModel {
                 return
             }
             
+            //Save graph
             self.graph = Graph(data: result)
+            
+            //Set available cities
             self.connections = result
         }
         
@@ -137,9 +140,13 @@ final class PlannerViewModel {
             return
         }
         
-        self.cost = String(describing: path.cost)
+        //Set cost
+        self.cost = String(format: "%.02f€", path.cost)
+        
+        //Set button state
         self.validTrip = true
         
+        //Extract coordinates for future use
         if let connections = self.connections?.connections {
             self.coordinates = extractTripCoordinates(from: connections, using: path.path)
         }

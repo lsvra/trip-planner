@@ -11,6 +11,7 @@ enum PlannerError: Error {
     case noInternetConnection
     case parsingError
     case tripUnavailable
+    case emptyFields
     case unknownError
     
     func title() -> String {
@@ -27,6 +28,8 @@ enum PlannerError: Error {
             return "error_message_parsing_data"
         case .tripUnavailable:
             return "error_message_trip_unavailable"
+        case .emptyFields:
+            return "error_message_empty_fields"
         case .unknownError:
             return "error_message_unknown"
         }

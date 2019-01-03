@@ -19,8 +19,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     //MARK: Vars
-    private var viewModel: MapViewModel?
-    var coordinates: [Mappable]?
+    var viewModel: MapViewModel?
     
     //Mark: Static init
     static func instantiate(with coordinates: [Mappable]) -> UIViewController? {
@@ -32,7 +31,7 @@ class MapViewController: UIViewController {
            return nil
         }
         
-        mapViewController.coordinates = coordinates
+        mapViewController.viewModel = MapViewModel(coordinates: coordinates)
         
         return viewController
     }
@@ -56,8 +55,6 @@ class MapViewController: UIViewController {
     
     //MARK: Methods
     private func configureView(){
-        
-        title = "title_map".localized()
         mapView.delegate = self
     }
     

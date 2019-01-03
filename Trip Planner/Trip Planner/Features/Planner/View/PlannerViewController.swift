@@ -57,13 +57,16 @@ class PlannerViewController: UIViewController {
     
     private func configureView(){
         
-        title = "title_planner".localized()
+        if let navigationController = navigationController {
+            navigationController.navigationBar.tintColor = Color.mainColorDark.color()
+            navigationController.navigationBar.topItem?.title = "app_name".localized()
+        }
       
         goToMapButton.setTitle("button_go_to_map".localized(), for: .normal)
         goToMapButton.titleLabel?.font = UIFont(name: Font.regular.name(), size: 16)
-        goToMapButton.backgroundColor = Color.textColorRed.color()
+        goToMapButton.backgroundColor = Color.gray.color()
         goToMapButton.setTitleColor(Color.white.color() , for: .normal)
-        goToMapButton.setTitleColor(Color.secondaryColor.color(), for: .disabled)
+        goToMapButton.setTitleColor(Color.white.color(), for: .disabled)
         goToMapButton.isEnabled = false
         
         planTripButton.setTitle("button_plan_trip".localized(), for: .normal)
@@ -131,7 +134,7 @@ class PlannerViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.goToMapButton.isEnabled = isEnabled
-                self.goToMapButton.backgroundColor = isEnabled ? Color.mainColorDark.color() : Color.textColorRed.color()
+                self.goToMapButton.backgroundColor = isEnabled ? Color.mainColorDark.color() : Color.gray.color()
             }
         }
     }
@@ -139,7 +142,15 @@ class PlannerViewController: UIViewController {
     private func planTrip(){
         
         guard let start = fromTextField.text, let end = toTextField.text else {
+            
             let error = PlannerError.unknownError
+            displayError(title: error.title().localized(), message: error.message().localized())
+            return
+        }
+        
+        guard !start.isEmpty,!end.isEmpty else {
+            
+            let error = PlannerError.emptyFields
             displayError(title: error.title().localized(), message: error.message().localized())
             return
         }
@@ -152,18 +163,21 @@ class PlannerViewController: UIViewController {
     private func openMap(){
         
         guard let navigationController = navigationController else {
+            
             let error = PlannerError.unknownError
             displayError(title: error.title().localized(), message: error.message().localized())
             return
         }
         
         guard let coordinates = viewModel?.coordinates else {
+            
             let error = PlannerError.unknownError
             displayError(title: error.title().localized(), message: error.message().localized())
             return
         }
         
         guard let viewController = MapViewController.instantiate(with: coordinates) else {
+            
             let error = PlannerError.unknownError
             displayError(title: error.title().localized(), message: error.message().localized())
             return

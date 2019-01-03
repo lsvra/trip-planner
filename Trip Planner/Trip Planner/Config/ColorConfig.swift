@@ -16,21 +16,24 @@ enum Color {
     case textColorDark
     case textColorRed
     case white
+    case gray
     
     func color() -> UIColor {
         switch self {
         case .mainColor:
-            return UIColor(red: 0.69, green: 0.73, blue: 0.59, alpha: 1.0)
+            return UIColor(red: 0.48, green: 0.25, blue: 0.96, alpha: 1.0)
         case .mainColorDark:
-            return UIColor(red: 0.52, green: 0.65, blue: 0.47, alpha: 1.0)
+            return UIColor(red: 0.32, green: 0.15, blue: 0.70, alpha: 1.0)
         case .secondaryColor:
-            return UIColor(red: 0.85, green: 0.86, blue: 0.83, alpha: 1.0)
+            return UIColor(red: 0.75, green: 0.98, blue: 0.59, alpha: 1.0)
         case .textColorDark:
             return .darkText
         case .textColorRed:
-            return UIColor(red: 0.52, green: 0.12, blue: 0.02, alpha: 1.0)
+            return .red
         case .white:
             return .white
+        case .gray:
+            return .lightGray
         }
     }
 }

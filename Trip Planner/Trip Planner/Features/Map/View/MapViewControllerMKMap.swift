@@ -15,12 +15,24 @@ extension MapViewController: MKMapViewDelegate {
         if overlay is MKPolyline {
             
             let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = Color.mainColorDark.color()
+            renderer.strokeColor = Color.mainColor.color()
             renderer.lineWidth = 4
             
             return renderer
         }
         
         return MKOverlayRenderer(overlay: overlay)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MapAnnotation {
+            
+            let pin = MKPinAnnotationView()
+            pin.pinTintColor = Color.mainColorDark.color()
+            return pin
+        }
+        
+        return MKAnnotationView()
     }
 }
