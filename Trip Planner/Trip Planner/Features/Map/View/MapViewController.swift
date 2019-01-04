@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController {
     
     //MARK: Static init vars
-    private static let storyboardName = "Main"
+    private static let storyboardName = "Features"
     private static let identifier = "MapViewController"
     
     //MARK: IBOutlets
@@ -22,7 +22,7 @@ class MapViewController: UIViewController {
     var viewModel: MapViewModel?
     
     //Mark: Static init
-    static func instantiate(with coordinates: [Mappable]) -> UIViewController? {
+    static func instantiate(with params: MapParams) -> UIViewController? {
         
         let storyboard = UIStoryboard(name: MapViewController.storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: MapViewController.identifier)
@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
            return nil
         }
         
-        mapViewController.viewModel = MapViewModel(coordinates: coordinates)
+        mapViewController.viewModel = MapViewModel(coordinates: params.coordinates)
         
         return viewController
     }
@@ -55,6 +55,7 @@ class MapViewController: UIViewController {
     
     //MARK: Methods
     private func configureView(){
+        mapView.layoutMargins = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         mapView.delegate = self
     }
     
@@ -79,7 +80,7 @@ class MapViewController: UIViewController {
                 return
             }
             
-            mapView.addAnnotations(annotations)
+            mapView.showAnnotations(annotations, animated: true)
         }
         
         viewModel.displayPath = { [weak self] path in

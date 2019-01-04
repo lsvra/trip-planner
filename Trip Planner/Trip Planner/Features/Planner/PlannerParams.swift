@@ -1,5 +1,5 @@
 //
-//  Configurator.swift
+//  PlannerParams.swift
 //  Trip Planner
 //
 //  Created by Luís Vieira on 30/12/2018.
@@ -8,17 +8,17 @@
 
 import Foundation
 
-final class Configurator {
+class PlannerParams {
     
-    static func queue() -> OperationQueue {
+    func queue() -> OperationQueue {
         return OperationQueue()
     }
     
-    static func session() -> URLSession {
+    func session() -> URLSession {
         return URLSession(configuration: .default)
     }
     
-    static func reachability() -> Reachability? {
+    func reachability() -> Reachability? {
         
         let reachability: Reachability?
         

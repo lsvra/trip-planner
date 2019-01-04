@@ -10,6 +10,10 @@ import UIKit
 
 class PlannerViewController: UIViewController {
     
+    //MARK: Static init vars
+    private static let storyboardName = "Features"
+    private static let identifier = "PlannerViewController"
+    
     //MARK: IBOutlets
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
@@ -21,6 +25,23 @@ class PlannerViewController: UIViewController {
     private var viewModel: PlannerViewModel?
     var availableCities: Set<String>?
     
+    //Mark: Static init
+    static func instantiate(with params: PlannerParams) -> UIViewController? {
+        
+        let storyboard = UIStoryboard(name: PlannerViewController.storyboardName, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: PlannerViewController.identifier)
+        
+        guard let plannerViewController = viewController as? PlannerViewController else {
+            return nil
+        }
+        
+        plannerViewController.viewModel = PlannerViewModel(session: params.session(),
+                                                           queue: params.queue(),
+                                                           reachability: params.reachability())
+    
+        return viewController
+    }
+    
     //MARK: Lifecycle
     override func loadView() {
         super.loadView()
@@ -29,10 +50,6 @@ class PlannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = PlannerViewModel(session: Configurator.session(),
-                                     queue: Configurator.queue(),
-                                     reachability: Configurator.reachability())
         
         hideKeyboardOnTap()
         bindOperations()
@@ -56,6 +73,9 @@ class PlannerViewController: UIViewController {
     }
     
     private func configureView(){
+        
+        //This can be made in the storyboard. I prefer coding my way through it.
+        //The class grows a bit more but we also have more control over the layout.
         
         if let navigationController = navigationController {
             navigationController.navigationBar.tintColor = Color.mainColorDark.color()
@@ -83,6 +103,7 @@ class PlannerViewController: UIViewController {
         fromTextField.textColor = Color.textColorDark.color()
         fromTextField.clearButtonMode = .whileEditing
         fromTextField.returnKeyType = .done
+        fromTextField.autocorrectionType = .no
         fromTextField.delegate = self
         
         toTextField.font = UIFont(name: Font.regular.name(), size: 16)
@@ -90,6 +111,7 @@ class PlannerViewController: UIViewController {
         toTextField.textColor = Color.textColorDark.color()
         toTextField.clearButtonMode = .whileEditing
         toTextField.returnKeyType = .done
+        toTextField.autocorrectionType = .no
         toTextField.delegate = self
     }
     
@@ -176,7 +198,9 @@ class PlannerViewController: UIViewController {
             return
         }
         
-        guard let viewController = MapViewController.instantiate(with: coordinates) else {
+        let params = MapParams(coordinates: coordinates)
+        
+        guard let viewController = MapViewController.instantiate(with: params) else {
             
             let error = PlannerError.unknownError
             displayError(title: error.title().localized(), message: error.message().localized())
