@@ -17,6 +17,9 @@
 		9545F4FC21DE9404003A5056 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F4FB21DE9404003A5056 /* MapError.swift */; };
 		9545F4FF21DECA8B003A5056 /* Features.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9545F4FE21DECA8B003A5056 /* Features.storyboard */; };
 		9545F50421DECE04003A5056 /* MapParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F50321DECE04003A5056 /* MapParams.swift */; };
+		9545F50A21DF02B9003A5056 /* PlannerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F50921DF02B9003A5056 /* PlannerViewModelTests.swift */; };
+		9545F50C21DF02CF003A5056 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F50B21DF02CF003A5056 /* MapViewModelTests.swift */; };
+		9545F50E21DF0324003A5056 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545F50D21DF0324003A5056 /* GraphTests.swift */; };
 		955E1D4321DD1A0A00B3BDC5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4221DD1A0A00B3BDC5 /* Graph.swift */; };
 		955E1D4521DD218100B3BDC5 /* GraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4421DD218100B3BDC5 /* GraphNode.swift */; };
 		955E1D4721DD7A2F00B3BDC5 /* GraphPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */; };
@@ -67,6 +70,9 @@
 		9545F4FB21DE9404003A5056 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
 		9545F4FE21DECA8B003A5056 /* Features.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Features.storyboard; sourceTree = "<group>"; };
 		9545F50321DECE04003A5056 /* MapParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapParams.swift; sourceTree = "<group>"; };
+		9545F50921DF02B9003A5056 /* PlannerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewModelTests.swift; sourceTree = "<group>"; };
+		9545F50B21DF02CF003A5056 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		9545F50D21DF0324003A5056 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
 		955E1D4221DD1A0A00B3BDC5 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		955E1D4421DD218100B3BDC5 /* GraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNode.swift; sourceTree = "<group>"; };
 		955E1D4621DD7A2F00B3BDC5 /* GraphPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPath.swift; sourceTree = "<group>"; };
@@ -201,9 +207,35 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		9545F50521DEE911003A5056 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				955E1D3D21DD13CE00B3BDC5 /* Planner */,
+				9545F50621DEE926003A5056 /* Map */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9545F50621DEE926003A5056 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9545F50B21DF02CF003A5056 /* MapViewModelTests.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		9545F50821DEE970003A5056 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				9545F50D21DF0324003A5056 /* GraphTests.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		955E1D3A21DD136A00B3BDC5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9545F50821DEE970003A5056 /* Graph */,
 				955E1D3C21DD138900B3BDC5 /* Networking */,
 				955E1D3B21DD138000B3BDC5 /* Extensions */,
 			);
@@ -230,6 +262,7 @@
 		955E1D3D21DD13CE00B3BDC5 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				9545F50921DF02B9003A5056 /* PlannerViewModelTests.swift */,
 			);
 			path = Planner;
 			sourceTree = "<group>";
@@ -306,8 +339,8 @@
 		95E5687221D8EBF300317109 /* Trip PlannerTests */ = {
 			isa = PBXGroup;
 			children = (
-				955E1D3D21DD13CE00B3BDC5 /* Planner */,
 				95E5687521D8EBF300317109 /* Info.plist */,
+				9545F50521DEE911003A5056 /* Features */,
 				955E1D3A21DD136A00B3BDC5 /* Helpers */,
 			);
 			path = "Trip PlannerTests";
@@ -514,7 +547,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E568A021D9A1B400317109 /* EndpointTests.swift in Sources */,
+				9545F50A21DF02B9003A5056 /* PlannerViewModelTests.swift in Sources */,
 				95A5744921DD0299000C2E2F /* SetTests.swift in Sources */,
+				9545F50C21DF02CF003A5056 /* MapViewModelTests.swift in Sources */,
+				9545F50E21DF0324003A5056 /* GraphTests.swift in Sources */,
 				95E568A221D9A93A00317109 /* DataLoadOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
