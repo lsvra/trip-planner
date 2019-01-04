@@ -20,10 +20,13 @@ class PlannerParams {
     
     func reachability() -> Reachability? {
         
-        let reachability: Reachability?
+        var reachability: Reachability?
         
         do {
-            reachability = try Reachability()
+            reachability = try Reachability() //Create object
+            
+            try reachability?.start()         //Start updates
+            
         } catch {
             reachability = nil
         }

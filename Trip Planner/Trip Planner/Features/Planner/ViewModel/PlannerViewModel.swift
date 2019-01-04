@@ -69,18 +69,26 @@ final class PlannerViewModel {
         self.queue = queue
         self.reachability = reachability
         self.graph = nil
+        
+        if self.reachability != nil {
+            NotificationCenter.default.addObserver(self, selector: #selector(reloadView), name: .flagsChanged, object: nil)
+        }
+    }
+    
+    deinit {
+        if let reachability = self.reachability {
+            reachability.stop()
+            NotificationCenter.default.removeObserver(self, name: .flagsChanged, object: nil)
+        }
     }
 
     //MARK: Methods
     func requestConnections() {
         
         //Check if there is a connection available
-        if let reachability = self.reachability {
-            
-            guard reachability.isConnectedToNetwork else {
-                self.error = .noInternetConnection
-                return
-            }
+        guard isConnectedToNetwork() else {
+            self.error = .noInternetConnection
+            return
         }
         
         //Get the correct url
@@ -150,6 +158,25 @@ final class PlannerViewModel {
         if let connections = self.connections?.connections {
             self.coordinates = extractTripCoordinates(from: connections, using: path.path)
         }
+    }
+    
+    @objc private func reloadView(){
+        
+        if isConnectedToNetwork() {
+            requestConnections()
+        } else {
+            self.error = .noInternetConnection
+            return
+        }
+    }
+    
+    private func isConnectedToNetwork() -> Bool{
+        
+        if let reachability = self.reachability {
+            return reachability.isConnectedToNetwork
+        }
+        
+        return true
     }
     
     private func extractTripCoordinates(from connections: [Connection], using cities: [String]) -> [Coordinate]?{

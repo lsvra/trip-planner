@@ -22,7 +22,7 @@
 
 //Errors - Message
 "error_message_network" = "An error has ocurred while contacting the server. Please try again later.";
-"error_message_no_internet_connection" = "Please check your connection and try again.";
+"error_message_no_internet_connection" = "You are offline. Please check your internet connection.";
 "error_message_parsing_data" = "An error has ocurred while parsing the response from the server. Please try again later.";
 "error_message_trip_unavailable" = "The trip you selected can not be made right now. Please try a different combination.";
 "error_message_empty_fields" = "Please fill all available fields.";

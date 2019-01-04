@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MapViewModel {
+final class MapViewModel {
     
     //MARK: Vars
     private let coordinates: [Mappable]

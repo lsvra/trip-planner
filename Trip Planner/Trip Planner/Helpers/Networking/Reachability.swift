@@ -62,7 +62,7 @@ extension Reachability {
         guard SCNetworkReachabilitySetDispatchQueue(reachability, reachabilitySerialQueue) else { stop()
             throw Network.Error.failedToSetDispatchQueue
         }
-        reachabilitySerialQueue.async { self.flagsChanged() }
+        reachabilitySerialQueue.async { self.setFlags() }
         isRunning = true
     }
     func stop() {
@@ -88,6 +88,11 @@ extension Reachability {
         return withUnsafeMutablePointer(to: &flags) {
             SCNetworkReachabilityGetFlags(reachability, UnsafeMutablePointer($0))
             } ? flags : nil
+    }
+    
+    func setFlags() {
+        guard let flags = flags, flags != reachabilityFlags else { return }
+        reachabilityFlags = flags
     }
     
     /// compares the current flags with the previous flags and if changed posts a flagsChanged notification
