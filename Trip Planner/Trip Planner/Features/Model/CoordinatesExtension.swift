@@ -18,6 +18,14 @@ extension Coordinate: Mappable {
             return nil
         }
         
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        //Check if the coordinate is a valid one
+        guard CLLocationCoordinate2DIsValid(coordinate) else {
+            return nil
+        }
+        
+        return coordinate
+        
     }
 }
